@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:go_router/go_router.dart';
 import 'package:movie_discovery_app/core/theme/app_theme.dart';
 
@@ -40,31 +40,28 @@ class _SplashPageState extends State<SplashPage>
       backgroundColor: AppTheme.bgColor,
       body: FadeTransition(
         opacity: _fade,
-        child: ScreenUtilInit(
-          designSize: const Size(375, 812),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                  width: 100.w,
-                  height: 100.h,
-                  decoration: BoxDecoration(
-                    //color: AppTheme.accentColor,
-                    borderRadius: BorderRadius.circular(24),
-                  ),
-                  child: const Image(
-                    image: AssetImage('assets/icons/logos_netflix.png'),
-                    fit: BoxFit.fill,
-                    width: 210,
-                    height: 50,
-                  ),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                width: 100,
+                height: 100,
+                decoration: BoxDecoration(
+                  //color: AppTheme.accentColor,
+                  borderRadius: BorderRadius.circular(24),
                 ),
-                const SizedBox(height: 20),
-                const CircularProgressIndicator(
-                    color: AppTheme.accentColor, strokeWidth: 2),
-              ],
-            ),
+                child: const Image(
+                  image: AssetImage('assets/icons/logos_netflix.png'),
+                  fit: BoxFit.fill,
+                  width: 210,
+                  height: 48,
+                ),
+              ),
+              const SizedBox(height: 20),
+              const CircularProgressIndicator(
+                  color: AppTheme.accentColor, strokeWidth: 2),
+            ],
           ),
         ),
       ),
